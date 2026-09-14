@@ -1,1 +1,45 @@
 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面跳转中...</title>
+    
+    <!-- 方法1：Meta标签自动跳转 (3秒后跳转) -->
+    <!-- 注意：分号后建议加空格，url为目标地址 -->
+    <meta http-equiv="refresh" content="0; url=https://yangrenhyx.ysepan.com/">
+
+    <style>
+        /* 简单的居中样式，虽然要求页面不出现内容，但保留基本结构以防JS禁用时用户知道在发生什么 */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面主体内容为空，符合“页面不出现内容”的要求 -->
+    <!-- 如果JS被禁用，Meta标签会在3秒后生效 -->
+
+    <script>
+        // 方法2：JavaScript 立即跳转
+        // 使用 replace 不会在历史记录中留下当前页，防止用户点击后退按钮死循环
+        // window.location.replace("https://yangrenhyx.ysepan.com/");
+
+        // 方法3：JavaScript 延迟跳转 (与Meta标签同步，3秒)
+        setTimeout(function() {
+            window.location.href = "https://yangrenhyx.ysepan.com/";
+        }, 3000);
+    </script>
+</body>
+</html>
